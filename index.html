@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mandali&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>VoidVox</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="right_part">
+        <div class="logo">
+          <img src="../img/logo.svg" alt="" />
+        </div>
+        <div class="profile_button">
+          <a href="#" class="myProfile">
+            <div class="myProfile">
+              <img src="../img/profile.svg" alt="" />
+              <p class="profile_text">My profile</p>
+            </div>
+          </a>
+        </div>
+        <div class="profile_button">
+          <a href="pages/news.html" class="myProfile">
+            <div class="myProfile">
+              <img src="../img/newspaper.png" alt="" />
+              <p class="profile_text">News</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="main_part">
+        <div class="header">
+          <div class="avatar">
+            <div class="avatar_icon">
+              <img src="img/avatar.png" id="avatar" alt="" />
+              <div class="add_avatar" onclick="uploadImage()">
+                <span class="plus">+</span>
+                <input
+                  type="file"
+                  id="imageAdd"
+                  style="display: none"
+                  onchange="updateAvatar()"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main_info">
+          <div class="name">
+            <p class="name_text" id="name">Limbo Kalisto</p>
+          </div>
+          <div class="second_info">
+            <div class="first_block">
+              <p class="second_info_text" id="tag">
+                <span>@limbokalisto</span>
+              </p>
+              <p class="second_info_text">921 followers</p>
+            </div>
+            <div class="second_block">
+              <p class="second_info_text">Date of registration: 01.01.1999</p>
+              <p class="second_info_text">36 subscribes</p>
+            </div>
+            <a class="edit_profile_link" onclick="openEditProfilePopup(event)">
+              <div class="edit_profile">
+                <div class="edit_logo">
+                  <img src="img/gear.png" alt="" />
+                </div>
+                <div class="edit_text">Edit profile</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="posts_infoblock">
+          <p class="posts_infoblock_text">My posts</p>
+        </div>
+        <div class="create_post">
+          <div class="add_icon">
+            <img src="img/clip.svg" alt="" onclick="chooseImage()" />
+            <input
+              type="file"
+              id="imageInput"
+              accept="image/*"
+              style="display: none"
+              onchange="handleImageChange()"
+            />
+          </div>
+          <div>
+            <textarea
+              id="textInput"
+              class="text_input"
+              placeholder="Type your text here..."
+            ></textarea>
+          </div>
+          <a href="" class="enter_icon" onclick="publishPost(event)">
+            <div>
+              <img src="img/forward.svg" alt="" />
+            </div>
+          </a>
+        </div>
+        <div class="post_container" id="posts"></div>
+        <div class="empty_post" id="empty_post">
+          <p>Create your new post!</p>
+        </div>
+      </div>
+      <!-- Всплывающее окно для редактирования профиля -->
+      <div class="popup" id="editProfilePopup">
+        <div class="popup-content">
+          <span class="close" onclick="closeEditProfilePopup(event)"
+            >&times;</span
+          >
+          <h2>Edit Profile</h2>
+          <label for="editName">Name:</label>
+          <input type="text" id="editName" />
+          <label for="editTag">Tag:</label>
+          <input type="text" id="editTag" />
+          <button onclick="saveProfileChanges(event)">Save Changes</button>
+        </div>
+      </div>
+
+      <div class="left_part">
+        <div class="subscribes">
+          <h1>Subscribes</h1>
+          <a href="pages/MaryTaylor.html" class="subscriber">
+            <div class="subscriber">
+              <div class="sub_avatar">
+                <img src="img/Mary.png" alt="" />
+              </div>
+              <p>Mary Taylor</p>
+            </div>
+          </a>
+          <a href="pages/DustinDelgado.html" class="subscriber">
+            <div class="subscriber">
+              <div class="sub_avatar">
+                <img src="img/Dustin.png" alt="" />
+              </div>
+              <p>Dustin Delgado</p>
+            </div>
+          </a>
+          <a href="pages/GregorySchneider.html" class="subscriber">
+            <div class="subscriber">
+              <div class="sub_avatar">
+                <img src="img/Gregory.png" alt="" />
+              </div>
+              <p>Gregory Schneider</p>
+            </div>
+          </a>
+          <a href="pages/KathyBell.html" class="subscriber">
+            <div class="subscriber">
+              <div class="sub_avatar">
+                <img src="img/Kathy.png" alt="" />
+              </div>
+              <p>Kathy Bell</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
