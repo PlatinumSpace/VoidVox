@@ -1,0 +1,529 @@
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+/*--------------------*/
+
+.bigred {
+  font-size: 20px;
+  color: red;
+}
+
+body {
+  font-family: "Mandali", sans-serif;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.right_part {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-color: #fdfdfd;
+  position: fixed;
+  padding-left: 3%;
+}
+.right_part::after {
+  content: "";
+  position: absolute;
+  top: 0%; /* половина высоты div */
+  right: 0;
+  height: 100%; /* половина высоты div */
+  border-right: 1px solid rgba(217, 217, 217, 1); /* тут можно установить нужный цвет и толщину границы */
+}
+.logo {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.logo img {
+  width: 70%;
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
+}
+.profile_button {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.myProfile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+}
+.profile_button{
+  margin-left: 5%;
+}
+.profile_button a{
+  color: black;
+}
+.myProfile img {
+  width: 6%;
+}
+.profile_text {
+  font-size: 26px;
+  margin-left: 5%;
+}
+.post_button {
+  width: 200px;
+  height: 80px;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 30px;
+  background-color: #fff;
+}
+.left_part {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fdfdfd;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.left_part::before {
+  content: "";
+  position: absolute;
+  top: 0%; /* половина высоты div */
+  left: 0;
+  height: 100%; /* половина высоты div */
+  border-right: 1px solid rgba(217, 217, 217, 1); /* тут можно установить нужный цвет и толщину границы */
+}
+.main_part {
+  width: 100%;
+  height: 100%;
+  padding: 0 400px;
+}
+.header {
+  width: 100%;
+  height: 40%;
+  background: rgb(217, 217, 217);
+  background: linear-gradient(
+    180deg,
+    rgba(217, 217, 217, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  position: relative;
+  display: flex;
+}
+.avatar {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar img {
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+  object-fit: cover; /* Добавляем это свойство для центрирования и обрезки изображения */
+}
+
+.add_avatar {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  background-color: #ffffffca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: transform 0.4s ease-in-out;
+}
+
+.add_avatar:hover {
+  transform: rotate(360deg);
+}
+
+.plus {
+  font-size: 40px;
+  padding-bottom: 20%;
+}
+.name_text {
+  font-size: 36px;
+  margin-left: 10%;
+}
+.second_info {
+  margin-left: 10%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.second_info p {
+  margin-top: 15px;
+  letter-spacing: 1px;
+}
+.second_info_text {
+  font-size: 12px;
+}
+.second_info_text span {
+  color: #999999;
+}
+.second_block {
+  margin-left: 20%;
+}
+.edit_profile {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  position: absolute;
+  top: -70%;
+  right: 0;
+}
+.edit_logo {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit_logo img {
+  width: 25px;
+  height: 25px;
+}
+.edit_text {
+  margin-left: 5%;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.posts_infoblock {
+  width: 80%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.posts_infoblock_text {
+  margin-left: 5%;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.create_post {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+}
+.add_icon {
+  cursor: pointer;
+}
+.text_input {
+  width: 35vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-left: 4%;
+  resize: none;
+  padding: 1% 2%;
+}
+.enter_icon {
+  margin-left: 5%;
+}
+.post_container {
+  padding-bottom: 5%;
+}
+.post {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+}
+.post_content {
+  margin-left: 2%;
+  width: 70%;
+}
+
+.post_avatar img{
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  object-fit: cover; /* Добавляем это свойство для центрирования и обрезки изображения */
+}
+.post_profile {
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  font-weight: 800;
+}
+.post_profile span {
+  font-size: 12px;
+  color: #999999;
+  font-weight: 400;
+}
+.post_date {
+  font-size: 10px;
+  font-weight: 800;
+  margin-left: 1%;
+}
+.post_main {
+  margin-left: 2%;
+  width: 80%;
+}
+.post_main h1 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 3%;
+}
+.post_main p {
+  word-wrap: break-word;
+  margin-top: 2%;
+  letter-spacing: 1px;
+  line-height: 18px;
+}
+.post_main img {
+  width: 50%;
+  border-radius: 15px;
+  margin-top: 2%;
+}
+.subscribes {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10%;
+}
+.subscribes h1 {
+  font-weight: 800;
+  font-size: 36px;
+  margin-bottom: 10%;
+}
+.subscriber {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-top: 12%;
+
+}
+.subscribes a{
+  color: black;
+  margin-top: -4%;
+  
+}
+.subscriber p {
+  font-size: 24px;
+  margin-left: 5%;
+}
+.sub_avatar img{
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+.next {
+  width: 90%;
+  border-top: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+/* Стили для всплывающего окна */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+}
+.edit_profile_link {
+  color: black;
+  cursor: pointer;
+}
+.popup-content {
+  background-color: #fefefe;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 15px;
+  width: 20%;
+  height: 45%;
+  position: relative;
+}
+.popup-content h2 {
+  align-self: center;
+  font-size: 24px;
+  margin-bottom: 10%;
+}
+.popup-content label {
+  font-size: 18px;
+  margin-bottom: 3%;
+}
+.popup-content input {
+  border: 1px solid #888;
+  border-radius: 5px;
+  height: 10%;
+  font-size: 24px;
+  margin-bottom: 10%;
+  padding: 6% 2%;
+}
+#editTag {
+  text-transform: lowercase;
+}
+.popup-content button {
+  width: 50%;
+  height: 10%;
+  align-self: center;
+  margin-top: 5%;
+  border-radius: 5px;
+}
+.popup-content button:hover,
+.popup-content button:focus {
+  background-color: #d9d9d9;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: self-end;
+  position: absolute;
+  top: 3%;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.empty_post {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  color: #bebcbc;
+}
+.empty_post p {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #88888817;
+}
